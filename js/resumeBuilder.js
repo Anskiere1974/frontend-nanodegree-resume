@@ -92,5 +92,55 @@ var projects = {
   ]
 };
 
+/* Code from Lesson if statements about writing out skills
+if (bio.skills.length > 0) {
+  $("#header").append(HTMLskillsStart);
 
+  var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+  $("#skills").append(formattedSkill);
+  formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+  $("#skills").append(formattedSkill);
+  formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+  $("#skills").append(formattedSkill);
+  formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
+  $("#skills").append(formattedSkill);
+}
+*/
 
+/* Code from lesson for in Loop to write out work.jobs
+for (job in work.jobs) {
+  $("#workExperience").append(HTMLworkStart);
+
+  var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+  var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+  var formattedEmployerTitle = formattedEmployer + formattedTitle;
+
+  $(".work-entry:last").append(formattedEmployerTitle);
+
+  var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+  $(".work-entry:last").append(formattedDates);
+
+  var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+  $(".work-entry:last").append(formattedDescription);
+}
+*/
+
+var displayWork = function() {
+  for (job in work.jobs) {
+  $("#workExperience").append(HTMLworkStart);
+
+  var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+  var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+  var formattedEmployerTitle = formattedEmployer + formattedTitle;
+
+  $(".work-entry:last").append(formattedEmployerTitle);
+
+  var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+  $(".work-entry:last").append(formattedDates);
+
+  var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+  $(".work-entry:last").append(formattedDescription);
+  }
+}
+
+displayWork();
