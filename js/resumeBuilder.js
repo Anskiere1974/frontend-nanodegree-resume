@@ -93,6 +93,18 @@ var projects = {
   ]
 };
 
+/* ****** Functions ****** */
+
+// create display() for skills and add to corresponding object
+bio.display = function() {
+  if (bio.skills.length > 0) {
+    for (var i = 0; i < bio.skills.length; i++) {
+      var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+      $("#skills").append(formattedSkill);
+    }
+  }
+}
+
 // Extract - replace data and prepend HTML bio.role
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 $("#header").prepend(formattedRole);
@@ -129,7 +141,12 @@ $("#header").append(formattedBioPic);
 var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 $("#header").append(formattedWelcomeMsg);
 
+// Append HTML for skills heading and skills ul
 $("#header").append(HTMLskillsStart);
+
+// calling in bio.display() to create skills list dynamically
+bio.display();
+
 
 
 /* Code from Lesson if statements about writing out skills
