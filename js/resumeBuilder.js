@@ -121,6 +121,17 @@ $("#topContacts").append(formattedTwitter);
 var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 $("#topContacts").append(formattedLocation);
 
+// Extract - replace data and append HTML bio.biopic
+var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
+$("#header").append(formattedBioPic);
+
+// Extract - replace data and append HTML bio.welcomeMessage
+var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+$("#header").append(formattedWelcomeMsg);
+
+$("#header").append(HTMLskillsStart);
+
+
 /* Code from Lesson if statements about writing out skills
 if (bio.skills.length > 0) {
   $("#header").append(HTMLskillsStart);
