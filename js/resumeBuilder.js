@@ -13,6 +13,7 @@ $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
  */
 
+
 var bio = {
   "name" : "Mayer Juergen",
   "role" : "Front End Web Developer",
@@ -92,6 +93,34 @@ var projects = {
   ]
 };
 
+// Extract - replace data and prepend HTML bio.role
+var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+$("#header").prepend(formattedRole);
+
+// Extract - replace data and prepend HTML bio.name
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
+$("#header").prepend(formattedName);
+
+// Extract - replace data and append HTML bio.contacts.mobile
+var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+$("#topContacts").append(formattedMobile);
+
+// Extract - replace data and append HTML bio.contacts.email
+var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+$("#topContacts").append(formattedEmail);
+
+// Extract - replace data and append HTML bio.contacts.github
+var formattedGit = HTMLgithub.replace("%data%", bio.contacts.github);
+$("#topContacts").append(formattedGit);
+
+// Extract - replace data and append HTML bio.contacts.twitter
+var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+$("#topContacts").append(formattedTwitter);
+
+// Extract - replace data and append HTML bio.contacts.location
+var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+$("#topContacts").append(formattedLocation);
+
 /* Code from Lesson if statements about writing out skills
 if (bio.skills.length > 0) {
   $("#header").append(HTMLskillsStart);
@@ -125,6 +154,7 @@ for (job in work.jobs) {
 }
 */
 
+/* Example for possible display function
 var displayWork = function() {
   for (job in work.jobs) {
   $("#workExperience").append(HTMLworkStart);
@@ -144,3 +174,4 @@ var displayWork = function() {
 }
 
 displayWork();
+*/
