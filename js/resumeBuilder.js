@@ -1,19 +1,3 @@
-/*
-This is empty on purpose! Your code to build the resume will go here.
-
- // My Data
-var myName = "Mayer Juergen";
-var myRole = "Front End Web Developer";
-
-var formattedName = HTMLheaderName.replace("%data%", myName);
-var formattedRole = HTMLheaderRole.replace("%data%", myRole);
-
-// Building the site like Bob the Builder
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
- */
-
-
 var bio = {
   "name" : "Mayer Juergen",
   "role" : "Front End Web Developer",
@@ -95,8 +79,49 @@ var projects = {
 
 /* ****** Functions ****** */
 
-// create display() for skills and add to corresponding object
+// create display() for bio and add to corresponding object
 bio.display = function() {
+
+  // Extract - replace data and prepend HTML bio.role
+  var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+  $("#header").prepend(formattedRole);
+
+  // Extract - replace data and prepend HTML bio.name
+  var formattedName = HTMLheaderName.replace("%data%", bio.name);
+  $("#header").prepend(formattedName);
+
+  // Extract - replace data and append HTML bio.contacts.mobile
+  var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+  $("#topContacts").append(formattedMobile);
+
+  // Extract - replace data and append HTML bio.contacts.email
+  var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+  $("#topContacts").append(formattedEmail);
+
+  // Extract - replace data and append HTML bio.contacts.github
+  var formattedGit = HTMLgithub.replace("%data%", bio.contacts.github);
+  $("#topContacts").append(formattedGit);
+
+  // Extract - replace data and append HTML bio.contacts.twitter
+  var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+  $("#topContacts").append(formattedTwitter);
+
+  // Extract - replace data and append HTML bio.contacts.location
+  var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+  $("#topContacts").append(formattedLocation);
+
+  // Extract - replace data and append HTML bio.biopic
+  var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
+  $("#header").append(formattedBioPic);
+
+  // Extract - replace data and append HTML bio.welcomeMessage
+  var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+  $("#header").append(formattedWelcomeMsg);
+
+  // Append HTML for skills heading and skills ul
+  $("#header").append(HTMLskillsStart);
+
+  // iterating through bio.skills[] and building the skills list
   if (bio.skills.length > 0) {
     for (var i = 0; i < bio.skills.length; i++) {
       var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
@@ -105,46 +130,7 @@ bio.display = function() {
   }
 }
 
-// Extract - replace data and prepend HTML bio.role
-var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-$("#header").prepend(formattedRole);
-
-// Extract - replace data and prepend HTML bio.name
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-$("#header").prepend(formattedName);
-
-// Extract - replace data and append HTML bio.contacts.mobile
-var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-$("#topContacts").append(formattedMobile);
-
-// Extract - replace data and append HTML bio.contacts.email
-var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-$("#topContacts").append(formattedEmail);
-
-// Extract - replace data and append HTML bio.contacts.github
-var formattedGit = HTMLgithub.replace("%data%", bio.contacts.github);
-$("#topContacts").append(formattedGit);
-
-// Extract - replace data and append HTML bio.contacts.twitter
-var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-$("#topContacts").append(formattedTwitter);
-
-// Extract - replace data and append HTML bio.contacts.location
-var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-$("#topContacts").append(formattedLocation);
-
-// Extract - replace data and append HTML bio.biopic
-var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
-$("#header").append(formattedBioPic);
-
-// Extract - replace data and append HTML bio.welcomeMessage
-var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-$("#header").append(formattedWelcomeMsg);
-
-// Append HTML for skills heading and skills ul
-$("#header").append(HTMLskillsStart);
-
-// calling in bio.display() to create skills list dynamically
+// Like Bob the Builder - we create the page
 bio.display();
 
 
