@@ -128,7 +128,7 @@ bio.display = function() {
       $("#skills").append(formattedSkill);
     }
   }
-}
+};
 
 // create display() for work and add to corresponding object
 work.display = function() {
@@ -158,7 +158,7 @@ work.display = function() {
     $(".work-entry:last").append(formattedDescription);
     }
   }
-}
+};
 
 // create display() for projects and add to corresponding object
 projects.display = function() {
@@ -192,7 +192,7 @@ projects.display = function() {
       }
     }
   }
-}
+};
 
 // create display() for education and add to corresponding object
 education.display = function() {
@@ -227,7 +227,7 @@ education.display = function() {
       }
     }
   }
-}
+};
 
 // Like Bob the Builder - I create the page
 bio.display();
