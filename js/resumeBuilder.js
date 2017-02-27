@@ -54,7 +54,7 @@ var work = {
       "description" : "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
     },
     {
-      "employer" : "Gesundheitszentrum Hochschwab Süd",
+      "employer" : "Gesundheitszentrum",
       "title" : "CEO",
       "location" : "Thoerl, Austria",
       "dates" : "2009 - in progress",
@@ -130,8 +130,39 @@ bio.display = function() {
   }
 }
 
-// Like Bob the Builder - we create the page
+// create display() for work and add to corresponding object
+work.display = function() {
+  // Let's see if there are jobs - if not - don't bother the browser with loop
+  if (work.jobs.length > 0) {
+    // iterate through work.jobs[]
+    for (var i = 0; i < work.jobs.length; i++) {
+      // first there is a containing div for every job I had
+      $("#workExperience").append(HTMLworkStart);
+
+      // create formattedEmployerTitle and write to HTML
+      var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer);
+      var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[i].title);
+      var formattedEmployerTitle = formattedEmployer + formattedTitle;
+      $(".work-entry:last").append(formattedEmployerTitle);
+
+      // create formattedDates and write to HTML
+      var formattedDates = HTMLworkDates.replace("%data%", work.jobs[i].dates);
+      $(".work-entry:last").append(formattedDates);
+
+      // create formattedLocation and write to HTML
+      var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[i].location);
+      $(".work-entry:last").append(formattedLocation);
+
+      //create formattedDescription and write to HTML
+      var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description);
+    $(".work-entry:last").append(formattedDescription);
+    }
+  }
+}
+
+// Like Bob the Builder - I create the page
 bio.display();
+work.display();
 
 
 
