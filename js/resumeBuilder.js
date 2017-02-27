@@ -194,10 +194,46 @@ projects.display = function() {
   }
 }
 
+// create display() for education and add to corresponding object
+education.display = function() {
+  // Are the any schools? - if not - don't bother browser with loop
+  if (education.schools.length > 0) {
+    // iterate through education.schools[]
+    for(var i = 0; i < education.schools.length; i++) {
+      // first there is a containing div for every job I had
+      $("#education").append(HTMLschoolStart);
+
+      // create formattedNameDegree and write to HTML
+      var formattedName = HTMLschoolName.replace("%data%", education.schools[i].name);
+      var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
+      var formattedNameDegree = formattedName + formattedDegree;
+      $(".education-entry:last").append(formattedNameDegree);
+
+      // create formattedDates and write to HTML
+      var formattedDates = HTMLschoolDates.replace("%data%", education.schools[i].dates);
+      $(".education-entry:last").append(formattedDates);
+
+      // create formattedLocation and write to HTML
+      var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[i].location);
+      $(".education-entry:last").append(formattedLocation);
+
+      if (education.schools[i].majors.length > 0) {
+      // Tricky nested loop ahead to get the schools mayors
+        for (var j = 0; j < education.schools[i].majors.length; j++) {
+          //create formattedMajor and write to HTML
+          var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[i].majors[j]);
+          $(".education-entry:last").append(formattedMajor);
+        }
+      }
+    }
+  }
+}
+
 // Like Bob the Builder - I create the page
 bio.display();
 work.display();
 projects.display();
+education.display();
 
 
 
