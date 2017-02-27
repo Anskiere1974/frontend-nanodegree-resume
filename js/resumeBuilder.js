@@ -160,9 +160,44 @@ work.display = function() {
   }
 }
 
+// create display() for projects and add to corresponding object
+projects.display = function() {
+  // Are there any projects? If not, don't bother the browser any longer
+  if (projects.projects.length > 0) {
+    // iterate through projects.projects[]
+    for (var i = 0; i < projects.projects.length; i++) {
+      // first there is an empty div for every project I made
+      $("#projects").append(HTMLprojectStart);
+
+      //create formattedTitle and write to HTML
+      var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[i].title);
+      $(".project-entry:last").append(formattedTitle);
+
+      // create formattedDates and write to HTML
+      var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[i].dates);
+      $(".project-entry:last").append(formattedDates);
+
+      // create formattedDescription and write to HTML
+      var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[i].description);
+      $(".project-entry:last").append(formattedDescription);
+
+      // Let's see if there are any project images
+      if (projects.projects[i].images.length > 0) {
+      // Tricky nested loop ahead to get the project images
+        for (var j = 0; j < projects.projects[i].images.length; j++) {
+          //create formattedImage and write to HTML
+          var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[i].images[j]);
+          $(".project-entry:last").append(formattedImage);
+        }
+      }
+    }
+  }
+}
+
 // Like Bob the Builder - I create the page
 bio.display();
 work.display();
+projects.display();
 
 
 
