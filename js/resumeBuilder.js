@@ -77,7 +77,7 @@ var projects = {
   ]
 };
 
-/* ****** Functions ****** */
+/* ****** Methods ****** */
 
 // create display() for bio and add to corresponding object
 bio.display = function() {
@@ -93,22 +93,27 @@ bio.display = function() {
   // Extract - replace data and append HTML bio.contacts.mobile
   var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
   $("#topContacts").append(formattedMobile);
+  $("#footerContacts").append(formattedMobile);
 
   // Extract - replace data and append HTML bio.contacts.email
   var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
   $("#topContacts").append(formattedEmail);
+  $("#footerContacts").append(formattedEmail);
 
   // Extract - replace data and append HTML bio.contacts.github
   var formattedGit = HTMLgithub.replace("%data%", bio.contacts.github);
   $("#topContacts").append(formattedGit);
+  $("#footerContacts").append(formattedGit);
 
   // Extract - replace data and append HTML bio.contacts.twitter
   var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
   $("#topContacts").append(formattedTwitter);
+  $("#footerContacts").append(formattedTwitter);
 
   // Extract - replace data and append HTML bio.contacts.location
   var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
   $("#topContacts").append(formattedLocation);
+  $("#footerContacts").append(formattedLocation);
 
   // Extract - replace data and append HTML bio.biopic
   var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
@@ -260,59 +265,3 @@ work.display();
 projects.display();
 education.display();
 
-
-
-/* Code from Lesson if statements about writing out skills
-if (bio.skills.length > 0) {
-  $("#header").append(HTMLskillsStart);
-
-  var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-  $("#skills").append(formattedSkill);
-  formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-  $("#skills").append(formattedSkill);
-  formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-  $("#skills").append(formattedSkill);
-  formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-  $("#skills").append(formattedSkill);
-}
-*/
-
-/* Code from lesson for in Loop to write out work.jobs
-for (job in work.jobs) {
-  $("#workExperience").append(HTMLworkStart);
-
-  var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-  var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-  var formattedEmployerTitle = formattedEmployer + formattedTitle;
-
-  $(".work-entry:last").append(formattedEmployerTitle);
-
-  var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-  $(".work-entry:last").append(formattedDates);
-
-  var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-  $(".work-entry:last").append(formattedDescription);
-}
-*/
-
-/* Example for possible display function
-var displayWork = function() {
-  for (job in work.jobs) {
-  $("#workExperience").append(HTMLworkStart);
-
-  var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-  var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-  var formattedEmployerTitle = formattedEmployer + formattedTitle;
-
-  $(".work-entry:last").append(formattedEmployerTitle);
-
-  var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-  $(".work-entry:last").append(formattedDates);
-
-  var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-  $(".work-entry:last").append(formattedDescription);
-  }
-}
-
-displayWork();
-*/
