@@ -227,6 +227,31 @@ education.display = function() {
       }
     }
   }
+  // Are the any projects? - if not - don't bother browser with loop
+  if (education.onlineCourses.length > 0) {
+    // Start off with the onlineCourses Heading
+    $("#education").append(HTMLonlineClasses);
+
+    // iterate through education.onlineCourses
+    for(var k = 0; k < education.onlineCourses.length; k++) {
+      // first there is a containing div for every course I took
+      $("#education").append(HTMLschoolStart);
+
+      // create formattedTitleSchool and write to HTML
+      var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[k].title);
+      var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[k].school);
+      var formattedTitleSchool = formattedTitle + formattedSchool;
+      $(".education-entry:last").append(formattedTitleSchool);
+
+      // create formattedDates and write to HTML
+      var formattedCourseDates = HTMLonlineDates.replace("%data%", education.onlineCourses[k].dates);
+      $(".education-entry:last").append(formattedCourseDates);
+
+      // create formattedUrl and write to HTML
+      var formattedUrl = HTMLonlineURL.replace("%data%", education.onlineCourses[k].url);
+      $(".education-entry:last").append(formattedUrl);
+    }
+  }
 };
 
 // Like Bob the Builder - I create the page
