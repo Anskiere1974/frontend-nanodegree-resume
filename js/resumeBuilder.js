@@ -259,9 +259,16 @@ education.display = function() {
   }
 };
 
+function displayMap() {
+  $("#mapDiv").append(googleMap);
+}
+
+
 // Like Bob the Builder - I create the page
 bio.display();
 work.display();
 projects.display();
 education.display();
+displayMap();
+
 
