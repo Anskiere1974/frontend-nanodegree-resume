@@ -1,6 +1,6 @@
 var bio = {
-  "name" : "Mayer Juergen",
-  "role" : "Front End Web Developer",
+  "name" : "Steven Paul Jobs",
+  "role" : "Genius",
   "contacts" : {
     "mobile" : "00436769608100",
     "email" : "mayer.juergen@me.com",
@@ -8,11 +8,11 @@ var bio = {
     "twitter" : "@Anskiere1974",
     "location" : "Thoerl"
   },
-  "welcomeMessage" : "Hi, I am Juergen! Nice to meet you.",
+  "welcomeMessage" : "Innovation distinguishes between a leader and a follower.",
   "skills" : [
-    "HTML5", "CSS3", "JavaScript", "JQuery"
+    "That vision thing", "public speaking", "motivating teams", "helping to create really amazing products"
   ],
-  "biopic" : "images/fry.jpg"
+  "biopic" : "images/stevejobs.png"
 };
 
 var education = {

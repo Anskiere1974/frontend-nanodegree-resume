@@ -26,7 +26,7 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #009688 ;
   line-height: 48px;
   display: inline;
 }
@@ -95,12 +95,12 @@ a {
 .welcome-message {
   font-style: italic;
   font-size: 18px;
-  color: #f3f3f3;
+  color: #424242;
   line-height: 28px;
 }
 
 #skills-h3 {
-  color: #f5ae23;
+  color: #009688;
   display: none;
 }
 
@@ -109,12 +109,12 @@ a {
 }
 
 .orange-text {
-  color: #f5ae23;
+  color: #009688 ;
 }
 
 .white-text {
-  font-weight: bold;
-  color: #fff;
+  font-weight: 400;
+  color: #424242;
 }
 
 .gray {
@@ -129,7 +129,7 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #fff;
 }
 
 .flex-box {
